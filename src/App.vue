@@ -1,6 +1,8 @@
 <script setup>
 import NavigationBar from './components/NavigationBar.vue'
 import profilePicture from './assets/profile.jpg'
+import AboutSection from './components/AboutSection.vue'
+import SkillsSection from './components/SkillsSection.vue'
 </script>
 
 <template>
@@ -27,7 +29,7 @@ import profilePicture from './assets/profile.jpg'
           <!-- Social / Job Links -->
           <div class="social-links">
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/allya07/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -36,7 +38,7 @@ import profilePicture from './assets/profile.jpg'
             </a>
 
             <a
-              href="https://www.jobstreet.com.ph/"
+              href="ph.jobstreet.com/profiles/allyanna-mejia-qKvqVYrtWJ"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="JobStreet"
@@ -61,14 +63,9 @@ import profilePicture from './assets/profile.jpg'
         </div>
       </section>
 
-      <!-- Placeholder sections -->
-      <section id="about" class="placeholder-section">
-        <h2>About</h2>
-      </section>
+      <AboutSection />
 
-      <section id="skills" class="placeholder-section">
-        <h2>Skills</h2>
-      </section>
+      <SkillsSection />
 
       <section id="portfolio" class="placeholder-section">
         <h2>Portfolio</h2>

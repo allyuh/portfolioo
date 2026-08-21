@@ -131,7 +131,7 @@ a {
 
 /* Dark background - hover */
 .navbar-dark .nav-links a:hover {
-  color: #ede43a;
+  color: #e1dfa9;
 }
 
 /* Light background */
@@ -142,7 +142,7 @@ a {
 
 /* Light background - hover */
 .navbar-light .nav-links a:hover {
-  color: #877f21;
+  color: #828068;
 }
 
 /* underline on navbar */
@@ -273,7 +273,7 @@ a {
 }
 
 .home-section .greeting {
-  color: #ecd760;
+  color: #d4ca96;
 }
 /* Left side */
 
@@ -284,7 +284,7 @@ a {
 
 .greeting {
   font-size: 20px;
-  color: #edd53a;
+  color: #dcdacb;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -296,7 +296,7 @@ a {
 }
 
 .hero-text h1 span {
-  color: #ede13a;
+  color: #dfd568;
 }
 
 .hero-text h2 {
@@ -334,14 +334,14 @@ a {
   align-items: center;
   justify-content: center;
 
-  color: #ede43a;
+  color: #e7e4a6;
   font-weight: bold;
 
   transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  background: #e1ed3a;
+  background: #e6e9bc;
   color: black;
   transform: translateY(-4px);
 }
@@ -369,6 +369,525 @@ a {
   /* border: 8px solid #000000;
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.181); */
+}
+
+/* ========================================
+   ABOUT SECTION
+======================================== */
+
+.about-section {
+  min-height: 100vh;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 120px 40px 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 100px;
+
+  background: #ffffff;
+  color: #222222;
+}
+
+
+/* ========================================
+   ABOUT - LEFT SIDE
+======================================== */
+
+.about-text {
+  flex: 1;
+  max-width: 650px;
+}
+
+.section-label {
+  margin-bottom: 25px;
+
+  font-size: 48px;
+  font-weight: 700;
+
+  color: #222222;
+}
+
+.about-description {
+  font-size: 20px;
+  line-height: 1.8;
+
+  color: #555555;
+}
+
+
+/* ========================================
+   ABOUT - RIGHT SIDE
+======================================== */
+
+
+.about-highlights {
+  flex: 0 0 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 35px;
+
+  padding: 45px 40px;
+
+  text-align: center;
+
+  border: 1px solid #a3a39f;
+
+  /* box-shadow:
+    8px 8px 0 #84847d; */
+
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlight-item p {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #222222;
+}
+
+.highlight-item span {
+  margin-top: 8px;
+
+  font-size: 24px;
+
+  color: #222222;
+}
+
+
+/* Hover */
+
+.highlight-item:hover p,
+.highlight-item:hover span {
+  color: #000000;
+}
+
+.skills-link {
+  color: #555555;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skills-link:hover {
+  color: #333333;
+}
+
+
+/* ========================================
+   SKILLS SECTION
+======================================== */
+
+.skills-section {
+  min-height: 100vh;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 120px 40px 80px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+
+  background: #ffffff;
+  color: #222222;
+}
+
+
+/* ========================================
+   LEFT SIDE - SKILLS
+======================================== */
+
+.skills-content {
+  position: relative;
+
+  width: 500px;
+}
+
+
+/* Skills heading */
+
+.skills-heading-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.skills-heading {
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 48px;
+  font-weight: 700;
+
+  color: #222222;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+/* Arrow */
+
+.dropdown-arrow {
+  font-size: 32px;
+
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(90deg);
+}
+
+
+/* ========================================
+   SKILLS DROPRIGHT MENU
+======================================== */
+
+/* ========================================
+   SKILLS DROPRIGHT MENU
+======================================== */
+
+.skills-heading-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.skills-heading {
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 48px;
+  font-weight: 700;
+
+  color: #222222;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* Dropright arrow */
+
+.dropdown-arrow {
+  display: inline-block;
+
+  font-size: 42px;
+  line-height: 1;
+
+  transform: rotate(0deg);
+
+  transition: transform 0.2s ease;
+}
+
+
+/* Arrow points downward when menu is open */
+
+.dropdown-arrow.open {
+  transform: rotate(90deg);
+}
+
+
+/* ========================================
+   DROPRIGHT MENU
+======================================== */
+
+.skills-menu {
+  position: absolute;
+
+  top: 0;
+  left: calc(100% + 25px);
+
+  min-width: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+
+  box-shadow: 5px 5px 0 #222222;
+
+  z-index: 10;
+}
+
+
+.skills-menu button {
+  width: 100%;
+
+  padding: 12px 20px;
+
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 17px;
+
+  text-align: left;
+
+  color: #555555;
+
+  cursor: pointer;
+}
+
+
+.skills-menu button:hover {
+  color: #222222;
+  background: #f5f5f5;
+}
+
+.skills-menu button {
+  padding: 12px 20px;
+
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 17px;
+
+  text-align: left;
+
+  color: #555555;
+
+  cursor: pointer;
+}
+
+.skills-menu button:hover {
+  color: #222222;
+}
+
+
+/* ========================================
+   SKILLS LIST
+======================================== */
+
+.skills-list {
+  display: grid;
+
+  grid-template-columns: 180px 180px;
+
+  column-gap: 40px;
+
+  margin-top: 35px;
+
+  width: 400px;
+
+  animation: skillsSwipeLeft 0.45s ease-out;
+}
+@keyframes skillsSwipeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.skills-list ul {
+  width: 180px;
+
+  margin: 0;
+  padding-left: 25px;
+
+  box-sizing: border-box;
+}
+
+.skills-list li {
+  margin-bottom: 15px;
+
+  font-size: 21px;
+  line-height: 1.5;
+
+  color: #555555;
+}
+
+
+/* ========================================
+   RIGHT SIDE - PROJECTS
+======================================== */
+
+.projects-content {
+  position: relative;
+}
+
+.projects-heading {
+  margin: 0 0 35px;
+
+  font-size: 48px;
+  font-weight: 700;
+
+  color: #222222;
+}
+
+
+/* ========================================
+   PROJECT CAROUSEL
+======================================== */
+
+.project-carousel {
+  position: relative;
+
+  min-height: 260px;
+
+  padding-right: 50px;
+}
+
+.project-card {
+  animation: projectSwipeIn 0.4s ease;
+}
+
+@keyframes projectSwipeIn {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.project-card h3 {
+  margin: 0 0 20px;
+
+  font-size: 32px;
+  font-weight: 600;
+
+  color: #222222;
+}
+
+.project-card ul {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.project-card li {
+  margin-bottom: 15px;
+
+  font-size: 18px;
+  line-height: 1.5;
+
+  color: #555555;
+}
+
+
+/* ========================================
+   NEXT PROJECT ARROW
+======================================== */
+
+.project-next {
+  position: absolute;
+
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid #222222;
+  background: #ffffff;
+
+  font-size: 24px;
+
+  color: #222222;
+
+  cursor: pointer;
+}
+
+.project-next:hover {
+  background: #222222;
+  color: #ffffff;
+}
+
+.project-next:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.project-next:disabled:hover {
+  background: #ffffff;
+  color: #222222;
+}
+
+
+/* ========================================
+   PREVIOUS PROJECT
+======================================== */
+
+.project-previous {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+
+  color: #555555;
+
+  cursor: pointer;
+}
+
+.project-previous:hover {
+  color: #222222;
+}
+
+
+/* ========================================
+   PROJECT COUNTER
+======================================== */
+
+.project-counter {
+  margin-top: 20px;
+
+  font-size: 14px;
+
+  color: #888888;
 }
 
 /* ========================================
@@ -488,6 +1007,10 @@ a {
   .nav-links a .nav-hover-text {
     display: none;
   }
+  .navbar-dark .nav-links a:hover,
+  .navbar-light .nav-links a:hover {
+  color: inherit;
+  }
 
   /* ========================================
      MOBILE ACTIVE UNDERLINE
@@ -548,4 +1071,121 @@ a {
   .placeholder-section {
     padding: 100px 25px;
   }
+
+  .about-section {
+  min-height: auto;
+
+  padding: 100px 25px;
+
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 40px;
 }
+
+.about-text {
+  max-width: 100%;
+}
+
+.section-label {
+  font-size: 40px;
+}
+
+.about-description {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.about-highlights {
+  width: 100%;
+  flex: none;
+
+  gap: 20px;
+}
+.about-highlights p {
+   font-size: 24px;
+}
+.highlight-item span {
+  font-size: 22px;
+}
+
+/* ========================================
+   MOBILE SKILLS
+======================================== */
+
+.skills-section {
+  min-height: auto;
+
+  padding: 100px 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+
+  gap: 80px;
+}
+
+
+/* Skills heading */
+
+.skills-heading {
+  font-size: 40px;
+}
+
+
+/* Mobile dropright menu */
+
+.skills-menu {
+  position: static;
+
+  margin-top: 20px;
+
+  width: 100%;
+
+  border-left: none;
+  border-top: 1px solid #222222;
+
+  padding-top: 10px;
+}
+
+
+/* Skills list */
+
+.skills-list {
+  gap: 20px;
+}
+
+.skills-list li {
+  font-size: 18px;
+}
+
+
+/* Projects */
+
+.projects-heading {
+  font-size: 40px;
+}
+
+.project-carousel {
+  min-height: 280px;
+}
+
+.project-card h3 {
+  font-size: 28px;
+}
+
+.project-card li {
+  font-size: 17px;
+}
+
+
+/* Project arrow */
+
+.project-next {
+  right: 0;
+}
+}
+
+
+
