@@ -7,7 +7,7 @@ const selectedSkillCategory = ref('Skills')
 const skillCategoryOptions = [
   'Skills',
   'IDE',
-  'Hardware',
+  'Hardware and Database',
   'Soft Skills'
 ]
 const skillCategories = {
@@ -24,7 +24,7 @@ const skillCategories = {
     ['Arduino IDE', 'XAMPP']
   ],
 
-  Hardware: [
+  'Hardware and Database': [
     ['Arduino UNO R3', 'SQL'],
     ['Sensors for Arduino']
   ],
@@ -46,41 +46,41 @@ const projects = [
   {
     name: 'NutriLiz',
     descriptions: [
-      'Project description placeholder.',
-      'Project description placeholder.',
-      'Project description placeholder.'
+      'Undergraduate Thesis (2025-2026)',
+      'Kiosk and Mobile App for easier access to nutrition information',
+      'Role: Mobile App Designer and Tester (React Native)'
     ]
   },
   {
     name: 'ReeLiz',
     descriptions: [
-      'Project description placeholder.',
-      'Project description placeholder.',
-      'Project description placeholder.'
+      'Cognate Project (2025)',
+      'Movie Listing and Ticketing System ',
+      'Role: Website Designer (Bootstrap, JS, CSS) '
     ]
   },
   {
     name: 'OGAE',
     descriptions: [
-      'Project description placeholder.',
-      'Project description placeholder.',
-      'Project description placeholder.'
+      'Cognate Project (2024)',
+      'Arduino-Enabled Greenhouse Monitoring System',
+      'Role: C++ Software Developer - Backend via Arduino IDE'
     ]
   },
   {
     name: 'DentaLiz',
     descriptions: [
-      'Project description placeholder.',
-      'Project description placeholder.',
-      'Project description placeholder.'
+      'Software Design Project (2024)',
+      'Dashboard & Management System ',
+      'Role: C# Software Developer UI Designer - Backend & Local hosting '
     ]
   },
   {
     name: 'PotatoLiz',
     descriptions: [
-      'Project description placeholder.',
-      'Project description placeholder.',
-      'Project description placeholder.'
+      'Advanced Programming Project (2024)',
+      'Point of Sale (POS) System',
+      'Role: Software Developer & UI Designer - Backend & Local hosting'
     ]
   }
 ]
@@ -88,16 +88,15 @@ const projects = [
 const currentProject = ref(0)
 
 const nextProject = () => {
-  if (currentProject.value < projects.length - 1) {
-    currentProject.value++
-  }
+  currentProject.value =
+    (currentProject.value + 1) % projects.length
 }
 
 const previousProject = () => {
-  if (currentProject.value > 0) {
-    currentProject.value--
-  }
+  currentProject.value =
+    (currentProject.value - 1 + projects.length) % projects.length
 }
+
 </script>
 
 <template>
@@ -109,19 +108,23 @@ const previousProject = () => {
       <!-- Skills Dropdown -->
       <div class="skills-heading-wrapper">
 
-    <button
-      class="skills-heading"
-      @click="showSkillMenu = !showSkillMenu"
-    >
-      {{ selectedSkillCategory }}
-
-      <span
-        class="dropdown-arrow"
-        :class="{ open: showSkillMenu }"
+      <button
+        class="skills-heading"
+        :class="{
+          'long-category': selectedSkillCategory === 'Hardware and Database' ||
+                          selectedSkillCategory === 'Soft Skills'
+        }"
+        @click="showSkillMenu = !showSkillMenu"
       >
-        ›
-      </span>
-    </button>
+        {{ selectedSkillCategory }}
+
+        <span
+          class="dropdown-arrow"
+          :class="{ open: showSkillMenu }"
+        >
+          ›
+        </span>
+      </button>
 
         <!-- Dropright Menu -->
       <div
@@ -173,9 +176,13 @@ const previousProject = () => {
     <!-- RIGHT SIDE -->
     <div class="projects-content">
 
+    <div class="projects-title">
       <h2 class="projects-heading">
         Projects
       </h2>
+
+      <div class="projects-line"></div>
+    </div>
 
 
       <!-- Project Carousel -->
@@ -192,8 +199,8 @@ const previousProject = () => {
 
           <ul>
             <li
-              v-for="description in projects[currentProject].descriptions"
-              :key="description"
+              v-for="(description, index) in projects[currentProject].descriptions"
+              :key="index"
             >
               {{ description }}
             </li>
@@ -202,11 +209,19 @@ const previousProject = () => {
         </div>
 
 
-        <!-- Right Arrow -->
+        <!-- Previous Arrow -->
+        <button
+          class="project-previous"
+          @click="previousProject"
+          aria-label="Previous project"
+        >
+          ←
+        </button>
+
+        <!-- Next Arrow -->
         <button
           class="project-next"
           @click="nextProject"
-          :disabled="currentProject === projects.length - 1"
           aria-label="Next project"
         >
           →
@@ -215,21 +230,21 @@ const previousProject = () => {
       </div>
 
 
-      <!-- Project Counter -->
-      <div class="project-counter">
-        {{ currentProject + 1 }} / {{ projects.length }}
+      <!-- Pagination -->
+      <div class="project-pagination">
+
+        <button
+          v-for="(project, index) in projects"
+          :key="project.name"
+          class="pagination-dot"
+          :class="{ active: currentProject === index }"
+          @click="currentProject = index"
+          :aria-label="`Go to ${project.name}`"
+        >
+        </button>
+
       </div>
 
-
-      <!-- Previous Arrow -->
-      <button
-        v-if="currentProject > 0"
-        class="project-previous"
-        @click="previousProject"
-        aria-label="Previous project"
-      >
-        ←
-      </button>
 
     </div>
 

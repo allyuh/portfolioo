@@ -482,6 +482,7 @@ a {
   color: #555555;
   text-decoration: none;
   font-weight: 600;
+
 }
 
 .skills-link:hover {
@@ -499,7 +500,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
 
-  padding: 120px 40px 80px;
+  padding: 70px 40px 80px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -519,8 +520,9 @@ a {
 
 .skills-content {
   position: relative;
-
   width: 500px;
+
+  transform: translateY(-22px);
 }
 
 
@@ -538,7 +540,7 @@ a {
   background: transparent;
 
   font-family: inherit;
-  font-size: 48px;
+  font-size: 45px;
   font-weight: 700;
 
   color: #222222;
@@ -547,9 +549,13 @@ a {
 
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  text-align: left;
 }
 
+.skills-heading.long-category {
+  font-size: 40px;
+}
 
 /* Arrow */
 
@@ -563,10 +569,6 @@ a {
   transform: rotate(90deg);
 }
 
-
-/* ========================================
-   SKILLS DROPRIGHT MENU
-======================================== */
 
 /* ========================================
    SKILLS DROPRIGHT MENU
@@ -637,16 +639,18 @@ a {
 
   background: #ffffff;
 
-  border: 1px solid #dddddd;
+  border: 1px solid #d1d0d0;
 
-  box-shadow: 5px 5px 0 #222222;
+  box-shadow: 5px 5px 0 #8f8f8f;
 
   z-index: 10;
 }
 
-
 .skills-menu button {
-  width: 100%;
+  width: auto;
+
+  display: inline-flex;
+  align-items: center;
 
   padding: 12px 20px;
 
@@ -655,7 +659,6 @@ a {
 
   font-family: inherit;
   font-size: 17px;
-
   text-align: left;
 
   color: #555555;
@@ -747,12 +750,24 @@ a {
 }
 
 .projects-heading {
-  margin: 0 0 35px;
+  margin-bottom: 20px;
 
   font-size: 48px;
   font-weight: 700;
 
   color: #222222;
+}
+
+.projects-title {
+  display: inline-block;
+}
+
+.projects-line {
+  width: 510px;
+  height: 2px;
+  margin-bottom: 10px;
+
+  background: #a3a3a3;
 }
 
 
@@ -763,12 +778,14 @@ a {
 .project-carousel {
   position: relative;
 
-  min-height: 260px;
+  min-height: 190px;
 
-  padding-right: 50px;
+  padding-right: 70px;
 }
 
 .project-card {
+  height: 210px;
+
   animation: projectSwipeIn 0.4s ease;
 }
 
@@ -797,6 +814,8 @@ a {
 .project-card ul {
   margin: 0;
   padding-left: 25px;
+
+  height: 130px;
 }
 
 .project-card li {
@@ -834,47 +853,55 @@ a {
   cursor: pointer;
 }
 
+
 .project-next:hover {
   background: #222222;
   color: #ffffff;
 }
 
-.project-next:disabled {
-  opacity: 0.25;
-  cursor: default;
-}
-
-.project-next:disabled:hover {
-  background: #ffffff;
-  color: #222222;
-}
 
 
 /* ========================================
    PREVIOUS PROJECT
 ======================================== */
 
-.project-previous {
+.project-previous,
+.project-next {
   position: absolute;
 
-  left: 0;
-  bottom: 0;
+  right: 0;
 
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 
-  border: none;
-  background: transparent;
+  border: 1px solid #222222;
+  background: #ffffff;
 
-  font-size: 22px;
-
-  color: #555555;
+  font-size: 24px;
+  color: #222222;
 
   cursor: pointer;
 }
+/* Previous - ABOVE */
+.project-previous {
+  top: calc(50% - 50px);
 
-.project-previous:hover {
-  color: #222222;
+  transform: translateY(-50%);
+}
+
+
+/* Next - BELOW */
+.project-next {
+  top: calc(50% + 10px);
+
+  transform: translateY(-50%);
+}
+
+
+.project-previous:hover,
+.project-next:hover {
+  background: #222222;
+  color: #ffffff;
 }
 
 
@@ -882,12 +909,33 @@ a {
    PROJECT COUNTER
 ======================================== */
 
-.project-counter {
-  margin-top: 20px;
+.project-pagination {
+  display: flex;
 
-  font-size: 14px;
+  justify-content: center;
+  align-items: center;
 
-  color: #888888;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.pagination-dot {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: 1px solid #222222;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.pagination-dot.active {
+  background: #222222;
 }
 
 /* ========================================
@@ -1073,119 +1121,104 @@ a {
   }
 
   .about-section {
-  min-height: auto;
+    min-height: auto;
+    padding: 30px 25px 100px;
 
-  padding: 100px 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
 
-  flex-direction: column;
-  align-items: flex-start;
+  .about-text {
+    max-width: 100%;
+  }
 
-  gap: 40px;
-}
+  .section-label {
+    font-size: 40px;
+  }
 
-.about-text {
-  max-width: 100%;
-}
+  .about-description {
+    font-size: 18px;
+    line-height: 1.7;
+  }
 
-.section-label {
-  font-size: 40px;
-}
+  .about-highlights {
+    width: 100%;
+    flex: none;
 
-.about-description {
-  font-size: 18px;
-  line-height: 1.7;
-}
+    gap: 20px;
+  }
+  .about-highlights p {
+    font-size: 24px;
+  }
+  .highlight-item span {
+    font-size: 22px;
+  }
 
-.about-highlights {
-  width: 100%;
-  flex: none;
+  /* ========================================
+    MOBILE SKILLS
+  ======================================== */
 
-  gap: 20px;
-}
-.about-highlights p {
-   font-size: 24px;
-}
-.highlight-item span {
-  font-size: 22px;
-}
+  .skills-section {
+    min-height: auto;
 
-/* ========================================
-   MOBILE SKILLS
-======================================== */
+    padding: 100px 25px;
 
-.skills-section {
-  min-height: auto;
+    display: flex;
+    flex-direction: column;
 
-  padding: 100px 25px;
+    align-items: stretch;
 
-  display: flex;
-  flex-direction: column;
-
-  align-items: stretch;
-
-  gap: 80px;
-}
+    gap: 80px;
+  }
 
 
-/* Skills heading */
-
-.skills-heading {
-  font-size: 40px;
-}
 
 
-/* Mobile dropright menu */
+  /* Mobile dropright menu */
 
-.skills-menu {
-  position: static;
+  .skills-menu {
+    position: static;
 
-  margin-top: 20px;
+    margin-top: 20px;
 
-  width: 100%;
+    width: 100%;
 
-  border-left: none;
-  border-top: 1px solid #222222;
+    border-left: none;
+    border-top: 1px solid #222222;
 
-  padding-top: 10px;
-}
-
-
-/* Skills list */
-
-.skills-list {
-  gap: 20px;
-}
-
-.skills-list li {
-  font-size: 18px;
-}
+    padding-top: 10px;
+  }
 
 
-/* Projects */
+  /* Skills list */
 
-.projects-heading {
-  font-size: 40px;
-}
+  .skills-list {
+    gap: 20px;
+  }
 
-.project-carousel {
-  min-height: 280px;
-}
-
-.project-card h3 {
-  font-size: 28px;
-}
-
-.project-card li {
-  font-size: 17px;
-}
+  .skills-list li {
+    font-size: 18px;
+  }
 
 
-/* Project arrow */
 
-.project-next {
-  right: 0;
-}
-}
+
+  .project-card h3 {
+    font-size: 28px;
+  }
+
+  .project-card li {
+    font-size: 17px;
+  }
+
+
+  /* Project arrow */
+
+  .project-next {
+    right: 0;
+  }
+  }
 
 
 
