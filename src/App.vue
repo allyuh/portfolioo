@@ -38,7 +38,7 @@ import SkillsSection from './components/SkillsSection.vue'
             </a>
 
             <a
-              href="ph.jobstreet.com/profiles/allyanna-mejia-qKvqVYrtWJ"
+              href="https://ph.jobstreet.com/profiles/allyanna-mejia-qKvqVYrtWJ"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="JobStreet"

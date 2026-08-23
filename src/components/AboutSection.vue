@@ -9,7 +9,7 @@
       </p>
 
       <p class="about-description">
-        I'm a fresh graduate with Bachelor of Science in
+        I'm a fresh graduate in Bachelor of Science in
         Computer Engineering. Throughout my college journey
         I have learned multiple coding languages
         (see in <a href="#skills" class="skills-link">Skills</a>) and have experience in software
