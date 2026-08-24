@@ -3,6 +3,8 @@ import NavigationBar from './components/NavigationBar.vue'
 import profilePicture from './assets/profile.jpg'
 import AboutSection from './components/AboutSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
+import PortfolioSection from './components/PortfolioSection.vue'
+import ContactSection from './components/ContactSection.vue'
 </script>
 
 <template>
@@ -11,7 +13,7 @@ import SkillsSection from './components/SkillsSection.vue'
 
     <main>
       <section id="home" class="hero home-section">
-        <!-- Left Side -->
+
         <div class="hero-text">
           <p class="greeting">Get to know me!</p>
 
@@ -26,7 +28,6 @@ import SkillsSection from './components/SkillsSection.vue'
             Welcome to my portfolio. You can know more about me by exploring my website!
           </p>
 
-          <!-- Social / Job Links -->
           <div class="social-links">
             <a
               href="https://www.linkedin.com/in/allya07/"
@@ -57,23 +58,16 @@ import SkillsSection from './components/SkillsSection.vue'
           </div>
         </div>
 
-        <!-- Right Side -->
         <div class="hero-image">
           <img :src="profilePicture" alt="Allyanna Mejia" />
         </div>
       </section>
 
       <AboutSection />
-
       <SkillsSection />
+      <PortfolioSection />
+      <ContactSection />
 
-      <section id="portfolio" class="placeholder-section">
-        <h2>Portfolio</h2>
-      </section>
-
-      <section id="contact" class="placeholder-section">
-        <h2>Contact</h2>
-      </section>
     </main>
   </div>
 </template>

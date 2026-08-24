@@ -7,6 +7,7 @@ const currentGalleryImage = ref(0)
 const showSkillMenu = ref(false)
 const skillsAnimationKey = ref(0)
 const selectedSkillCategory = ref('Skills')
+const galleryDirection = ref('gallery-next')
 const skillCategoryOptions = [
   'Skills',
   'IDE',
@@ -158,32 +159,32 @@ const selectGalleryProject = (index) => {
 }
 
 const nextGalleryImage = () => {
-  const images = projectGallery[selectedGallery.value].images
+
+  galleryDirection.value = 'gallery-next'
 
   currentGalleryImage.value =
-    (currentGalleryImage.value + 1) % images.length
+    (currentGalleryImage.value + 1) %
+    projectGallery[selectedGallery.value].images.length
 }
 
 const previousGalleryImage = () => {
-  const images = projectGallery[selectedGallery.value].images
+
+  galleryDirection.value = 'gallery-prev'
 
   currentGalleryImage.value =
-    (currentGalleryImage.value - 1 + images.length) % images.length
+    (currentGalleryImage.value - 1 +
+      projectGallery[selectedGallery.value].images.length) %
+    projectGallery[selectedGallery.value].images.length
 }
 
 </script>
 
 <template>
-      <!-- ========================================
-        PROJECT GALLERY
-    ======================================== -->
 
     <div
       v-if="showGallery"
       class="gallery-overlay"
     >
-
-      <!-- Exit Button -->
 
       <button
         class="gallery-close"
@@ -193,9 +194,6 @@ const previousGalleryImage = () => {
       >
         ×
       </button>
-
-
-      <!-- Project Tabs -->
 
       <div class="gallery-tabs">
 
@@ -215,11 +213,8 @@ const previousGalleryImage = () => {
       </div>
 
 
-      <!-- Gallery -->
-
       <div class="gallery-view">
 
-        <!-- Previous -->
 
         <button
           class="gallery-arrow gallery-previous"
@@ -231,20 +226,20 @@ const previousGalleryImage = () => {
         </button>
 
 
-        <!-- Image -->
-
         <div class="gallery-image-container">
 
-          <img
-            :src="projectGallery[selectedGallery].images[currentGalleryImage]"
-            :alt="`${projectGallery[selectedGallery].name} project image ${currentGalleryImage + 1}`"
-            class="gallery-image"
-          />
+          <Transition :name="galleryDirection" mode="out-in">
+
+            <img
+              :key="currentGalleryImage"
+              :src="projectGallery[selectedGallery].images[currentGalleryImage]"
+              :alt="`${projectGallery[selectedGallery].name} project image ${currentGalleryImage + 1}`"
+              class="gallery-image"
+            />
+
+          </Transition>
 
         </div>
-
-
-        <!-- Next -->
 
         <button
           class="gallery-arrow gallery-next"
@@ -256,9 +251,6 @@ const previousGalleryImage = () => {
         </button>
 
       </div>
-
-
-      <!-- Image Pagination -->
 
       <div class="gallery-pagination">
 
@@ -280,10 +272,8 @@ const previousGalleryImage = () => {
     </div>
   <section id="skills" class="skills-section">
 
-    <!-- LEFT SIDE -->
     <div class="skills-content">
 
-      <!-- Skills Dropdown -->
       <div class="skills-heading-wrapper">
 
       <button
@@ -304,7 +294,6 @@ const previousGalleryImage = () => {
         </span>
       </button>
 
-        <!-- Dropright Menu -->
       <div
         v-if="showSkillMenu"
         class="skills-menu"
@@ -322,7 +311,6 @@ const previousGalleryImage = () => {
       </div>
 
 
-      <!-- Skills List -->
       <div class="skills-list"
         :key="skillsAnimationKey">
 
@@ -351,7 +339,6 @@ const previousGalleryImage = () => {
     </div>
 
 
-    <!-- RIGHT SIDE -->
     <div class="projects-content">
 
     <div class="projects-title">
@@ -363,7 +350,6 @@ const previousGalleryImage = () => {
     </div>
 
 
-      <!-- Project Carousel -->
       <div class="project-carousel">
 
         <div
@@ -406,7 +392,6 @@ const previousGalleryImage = () => {
         </div>
 
 
-        <!-- Previous Arrow -->
         <button
           class="project-previous"
           @click="previousProject"
@@ -415,7 +400,6 @@ const previousGalleryImage = () => {
           ←
         </button>
 
-        <!-- Next Arrow -->
         <button
           class="project-next"
           @click="nextProject"
@@ -426,8 +410,6 @@ const previousGalleryImage = () => {
 
       </div>
 
-
-      <!-- Pagination -->
       <div class="project-pagination">
 
         <button

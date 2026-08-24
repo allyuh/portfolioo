@@ -1,0 +1,228 @@
+/* contact page */
+
+.contact-section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 50px 8%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+.contact-content {
+  width: 100%;
+  max-width: 1000px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.contact-content h2 {
+  margin: 0 0 60px;
+
+  font-size: 48px;
+  font-weight: 500;
+
+  color: #222222;
+}
+
+/* contact page (buttons) */
+
+.contact-buttons {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: stretch;
+
+  gap: 30px;
+}
+
+
+.contact-button {
+  position: relative;
+
+  width: 220px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  overflow: hidden;
+
+  border: 1px solid #222222;
+
+  background: #ffffff;
+  color: #222222;
+
+  font-family: inherit;
+  font-size: 17px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+/* contact page (icons) */
+
+.contact-button svg {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.contact-button:hover svg {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.contact-button:first-child svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-main-text {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.contact-hover-text {
+  position: absolute;
+
+  left: 50%;
+
+  transform:
+    translate(-50%, 100%);
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #222222;
+
+  color: #ffffff;
+}
+
+.contact-button:hover .contact-main-text {
+  transform: translateY(-100%);
+
+  opacity: 0;
+}
+
+
+.contact-button:hover .contact-hover-text {
+  transform:
+    translate(-50%, 0);
+
+  opacity: 1;
+}
+
+.contact-mobile-hint {
+  display: none;
+}
+
+.contact-copied-text {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+}
+
+/* contact page (back to top option) */
+
+.back-to-top {
+  margin-top: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 10px 20px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #222222;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+
+.back-to-top span {
+  transition: transform 0.3s ease;
+}
+
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition: transform 0.3s ease;
+}
+
+
+.back-to-top:hover span {
+  transform: translateY(-3px);
+}
+
+
+.back-to-top:hover svg {
+  transform: translateY(-5px);
+}

@@ -1,7 +1,6 @@
 <template>
   <section id="about" class="about-section">
 
-    <!-- Left Side -->
     <div class="about-text">
 
       <p class="section-label">
@@ -19,7 +18,6 @@
 
     </div>
 
-    <!-- Right Side -->
     <div class="about-highlights">
 
       <div class="highlight-item">

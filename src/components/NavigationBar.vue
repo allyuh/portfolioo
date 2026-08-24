@@ -47,13 +47,13 @@ onUnmounted(() => {
     }"
   >
     <div class="nav-container">
-      <!-- Logo -->
+      <!-- logo -->
       <a href="#home" class="logo" @click="closeMenu">
         <span>Allyanna Mejia</span>
         <span class="logo-hover-text"></span>
       </a>
 
-      <!-- Hamburger Button -->
+      <!-- hamburger -->
       <button
         class="hamburger"
         :class="{ open: menuOpen }"
@@ -66,7 +66,7 @@ onUnmounted(() => {
         <span></span>
       </button>
 
-      <!-- Navigation -->
+      <!-- navbar -->
       <ul class="nav-links" :class="{ 'menu-open': menuOpen }">
         <li>
           <a href="#home" :class="{ active: activeSection === 'home' }" @click="closeMenu">
