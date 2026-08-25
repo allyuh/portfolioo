@@ -95,8 +95,8 @@ onUnmounted(() => {
             :class="{ active: activeSection === 'portfolio' }"
             @click="closeMenu"
           >
-            <span>Portfolio</span>
-            <span class="nav-hover-text">Portfolio</span>
+            <span>Resume</span>
+            <span class="nav-hover-text">Resume</span>
           </a>
         </li>
 
