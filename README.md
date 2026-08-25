@@ -3,6 +3,4 @@ If it is your first time cloning this repository:
 - Make sure you are in the folder and run this command on terminal: npm install
 - To run the website run this command on terminal: npm run dev
 
-Still learning Vue since I want to improve my React skills. Let me know what your feedback is about my website!
-
-- Allya
+The portfolio is very simple because I'm still learning sorry!!
