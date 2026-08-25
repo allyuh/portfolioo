@@ -36,6 +36,7 @@
           @click="copyText('mejiaallya00@gmail.com', 'gmail')"
         >
           <svg
+            v-if="copied !== 'gmail'"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -74,9 +75,8 @@
             v-if="copied !== 'gmail'"
             class="contact-mobile-hint"
           >
-          — Press to Copy
+            — Press to Copy
           </span>
-
         </button>
 
 
@@ -87,6 +87,7 @@
           @click="copyText('09204840767', 'phone')"
         >
           <svg
+            v-if="copied !== 'phone'"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -121,7 +122,7 @@
             v-if="copied !== 'phone'"
             class="contact-mobile-hint"
           >
-          — Press to Copy
+            — Press to Copy
           </span>
 
         </button>
