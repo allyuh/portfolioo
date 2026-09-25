@@ -98,6 +98,15 @@
 
   .nav-links a .nav-hover-text {
     display: none;
+    transform: none;
+  }
+
+  .nav-links a:hover > span:first-child {
+    transform: none;
+  }
+
+  .nav-links a:hover .nav-hover-text {
+    transform: none;
   }
 
   /* remove hover effect on mobile */
@@ -177,21 +186,18 @@
   }
 
 /* about page */
+  #about {
+    scroll-margin-top: 70px;
+  }
 
   .about-section {
     width: 100%;
-
     min-height: auto;
-
-    padding: 30px 20px 80px;
-
+    padding: 50px 20px 80px;
     display: flex;
     flex-direction: column;
-
     align-items: stretch;
-
     gap: 50px;
-
     box-sizing: border-box;
   }
 
@@ -241,7 +247,7 @@
 
     min-height: auto;
 
-    padding: 80px 20px;
+    padding: 40px 20px;
 
     display: flex;
     flex-direction: column;
@@ -258,7 +264,7 @@
     position: relative;
 
     width: 100%;
-    height: 380px;
+    height: 40vh;
 
     flex-shrink: 0;
   }
@@ -572,6 +578,9 @@
   }
 
 /* portfolio page */
+  #portfolio {
+  scroll-margin-top: 10px;
+  }
 
   .portfolio-text {
     width: 100%;
@@ -613,10 +622,10 @@
 
   /* contact page */
 
-   .contact-section {
+  .contact-section {
     min-height: auto;
 
-    padding: 100px 25px;
+    padding: 45px 25px;
   }
 
   .contact-content h2 {

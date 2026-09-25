@@ -25,7 +25,7 @@ import ContactSection from './components/ContactSection.vue'
           <h2>An aspiring Web Developer</h2>
 
           <p class="description">
-            Welcome to my portfolio. You can know more about me by exploring my website!
+            Welcome to my portfolio. You can know more about me by exploring this website!
           </p>
 
           <div class="social-links">
